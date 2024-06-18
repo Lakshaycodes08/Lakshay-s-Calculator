@@ -1,0 +1,217 @@
+/* styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 2em;
+    margin: 0;
+    animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px #fff;
+    }
+    to {
+        text-shadow: 0 0 20px #ff8c00;
+    }
+}
+
+.calculator {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 360px;
+    width: 100%;
+    animation: fadeIn 1s ease-out, float 6s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.display {
+    background: #222;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 20px;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #ffa;
+    }
+    to {
+        box-shadow: 0 0 20px #ffa;
+    }
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.button {
+    background: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: buttonFadeIn 0.6s ease-in-out;
+}
+
+.button:active {
+    transform: scale(0.95);
+    animation: press 0.1s ease-in-out;
+}
+
+.button:hover {
+    background: #e0e0e0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.operator {
+    background: #f57c00;
+    color: #fff;
+    animation: operatorFadeIn 0.8s ease-in-out;
+}
+
+.operator:hover {
+    background: #e67e22;
+}
+
+.operator:active {
+    background: #d35400;
+}
+
+.clear {
+    background: #e74c3c;
+    color: #fff;
+    animation: clearFadeIn 0.9s ease-in-out;
+}
+
+.clear:hover {
+    background: #e74c3c;
+}
+
+.clear:active {
+    background: #c0392b;
+}
+
+.equal {
+    background: #2ecc71;
+    color: #fff;
+    grid-column: span 2;
+    animation: equalFadeIn 1s ease-in-out;
+}
+
+.equal:hover {
+    background: #27ae60;
+}
+
+.equal:active {
+    background: #1abc9c;
+}
+
+.zero {
+    grid-column: span 2;
+    animation: buttonFadeIn 0.6s ease-in-out;
+}
+
+@keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes operatorFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes clearFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes equalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes press {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
